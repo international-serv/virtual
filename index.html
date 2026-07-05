@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual Bank Payout Activation</title>
+
+<style>
+/* Modern Premium Reset Stack */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #020617 0%, #0b1329 50%, #1e1b4b 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    position: relative;
+    overflow-x: hidden;
+    color: #f1f5f9;
+}
+
+/* Sophisticated Dark Night Sparkling Space Engine */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background-image: 
+        radial-gradient(1px 1px at 30px 45px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 70px 95px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 110px 190px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 140px, rgba(255,255,255,0.85), rgba(0,0,0,0)),
+        radial-gradient(1.2px 1.2px at 210px 60px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 260px 250px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 320px 110px, rgba(255,255,255,0.95), rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 360px 160px, #fff, rgba(0,0,0,0));
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    opacity: 0.5;
+    animation: professionalSparkle 6s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes professionalSparkle {
+    0% { opacity: 0.35; transform: scale(1); }
+    50% { opacity: 0.75; filter: drop-shadow(0 0 1px #fff); }
+    100% { opacity: 0.55; transform: scale(1.02); }
+}
+
+/* Premium Glassmorphism Form Wrapper Container */
+.container {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 100%;
+    max-width: 500px;
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(37, 99, 235, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 28px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(to right, #ffffff, #93c5fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+    text-transform: uppercase;
+}
+
+input, select {
+    width: 100%;
+    padding: 14px;
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    font-size: 15px;
+    color: #f8fafc;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus {
+    border-color: #3b82f6;
+    background: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+input::placeholder {
+    color: #64748b;
+}
+
+/* Custom internal option elements tracking framework */
+select option {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+/* Advanced Amber Context Informational Notice Container */
+.note {
+    margin-top: 25px;
+    padding: 18px;
+    background: rgba(245, 158, 11, 0.07);
+    border-left: 4px solid #f59e0b;
+    border-radius: 12px;
+    line-height: 1.6;
+    color: #cbd5e1;
+    font-size: 14px;
+}
+
+.note b {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.note .highlight {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* High-End Interactive Corporate Buttons */
+button, .pay-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+button:hover, .pay-btn:hover {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+}
+
+button:active, .pay-btn:active {
+    transform: translateY(1px);
+}
+
+#page2 {
+    display: none;
+}
+
+/* Back Button Alignment Framework */
+.backBtn {
+    background: rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+    margin-bottom: 20px;
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 0;
+    box-shadow: none;
+}
+
+.backBtn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    transform: none;
+    box-shadow: none;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- PAGE 1 -->
+    <div id="page1">
+        <h2>Virtual Bank Payout Activation</h2>
+
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name">
+        </div>
+
+        <div class="form-group">
+            <label>Country</label>
+            <input type="text" id="country" placeholder="Enter your country">
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+        </div>
+
+        <div class="form-group">
+            <label>Currency Used</label>
+            <select id="currency">
+                <option value="">Select Currency</option>
+                <option>Kenyan Shilling (KES)</option>
+                <option>Ugandan Shilling (UGX)</option>
+                <option>Tanzanian Shilling (TZS)</option>
+                <option>Rwandan Franc (RWF)</option>
+                <option>Burundian Franc (BIF)</option>
+                <option>South Sudanese Pound (SSP)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Do you have a Payoneer Virtual Bank Account?</label>
+            <select id="account">
+                <option value="">Select</option>
+                <option>YES</option>
+                <option>NO</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Will you wish to get one?</label>
+            <select id="getOne">
+                <option value="">Select</option>
+                <option>YES</option>
+                <option>NO</option>
+            </select>
+        </div>
+
+        <button onclick="nextPage()">Submit and Proceed</button>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div id="page2">
+        <button class="backBtn" onclick="goBack()">← Back to Details</button>
+
+        <h2>Payoneer Account Verification</h2>
+
+        <div class="note">
+            <b>Important Notice:</b><br><br>
+            Obtaining a <span class="highlight">Payoneer Virtual Bank Account</span> requires a network processing clearance execution costing <b>USD $8.05</b>.
+            <br><br>
+            <b>Standard Dynamic Conversion:</b><br>
+            USD $8.05 ≈ <span class="highlight">KSh 1,105</span>
+            <br><br>
+            Please process the real-time settlement below to finalize integration.
+        </div>
+
+        <a href="https://paynecta.co.ke/pay/PAYONEER" target="_blank" class="pay-btn" onclick="return proceedPayment(event)">
+            Pay KSh 1,105 Via Gateway
+        </a>
+    </div>
+
+</div>
+
+<script>
+function nextPage(){
+    const name = document.getElementById("name").value.trim();
+    const country = document.getElementById("country").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const currency = document.getElementById("currency").value;
+    const account = document.getElementById("account").value;
+    const getOne = document.getElementById("getOne").value;
+
+    if(!name || !country || !phone || !currency || !account || !getOne){
+        alert("Please complete all necessary profile fields to initialize activation tracking.");
+        return;
+    }
+
+    document.getElementById("page1").style.display="none";
+    document.getElementById("page2").style.display="block";
+}
+
+function goBack(){
+    document.getElementById("page2").style.display="none";
+    document.getElementById("page1").style.display="block";
+}
+
+function proceedPayment(event){
+    return true;
+}
+</script>
+
+</body>
+</html>
